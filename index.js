@@ -4,8 +4,10 @@
 
     // Callback function to execute when mutations are observed
 const callback = function(mutationsList, observer) {
+  console.log(`mutation list => ${typeof mutationsList}, observer =>${observer}`)
     // Use traditional 'for loops' for IE 11
     for(const mutation of mutationsList) {
+      console.log(`mutation   => ${JSON.stringify(mutation)}`)
         if (mutation.type === 'childList') {
             console.log('A child node has been added or removed.');
         }
